@@ -34,3 +34,29 @@ when a nested Bag calculates the weight of its contents.
 This makes the inventory system flexible and allows
 containers to hold other containers.
 
+## Phase 3: Full Adventurer Inventory
+
+In Phase 3, I created a complete adventurer inventory
+using multiple levels of nested containers.
+
+The Main Backpack contains individual items and smaller
+bags, including a Potion Pouch and a Bag of Holding.
+The Bag of Holding also contains a Gem Pouch.
+
+I tested displayInfo() and getWeight() on the entire
+inventory and on the Potion Pouch independently.
+
+I also demonstrated exception handling by attempting
+to add an item to a sword, which correctly threw an
+UnsupportedOperationException.
+
+If I wanted to add a WeightlessBag, I could create a
+new subclass of InventoryComponent and customize its
+getWeight() method.
+
+I would not need to modify Item, Bag, or the existing
+InventoryComponent interface.
+
+This supports the Open/Closed Principle because the
+system can be extended with new container types
+without modifying existing classes.

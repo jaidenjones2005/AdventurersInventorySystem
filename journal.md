@@ -60,3 +60,34 @@ InventoryComponent interface.
 This supports the Open/Closed Principle because the
 system can be extended with new container types
 without modifying existing classes.
+
+## Phase 4: Validation and Reflection
+
+In Phase 4, I tested the Adventurer's Inventory System
+to verify that the Composite pattern works correctly.
+
+First, I tested an empty bag and confirmed that it
+returned only its base weight without crashing.
+
+Next, I removed a Health Potion from the Potion Pouch.
+The pouch's weight decreased from 1.5 lbs to 1.0 lbs.
+
+I also verified that removing the potion automatically
+updated the Main Backpack's total weight from
+15.1 lbs to 14.6 lbs.
+
+These tests demonstrated that recursive weight
+calculations work correctly across nested containers.
+
+One important edge case was making sure empty bags
+could calculate their weight without any child items.
+
+I also confirmed that unsupported operations on
+individual items are handled using exceptions.
+
+I did not need to modify the existing Composite
+pattern structure to complete these tests.
+
+Overall, the Composite pattern makes it easier
+to manage individual items and nested containers
+through the same interface.
